@@ -13,7 +13,7 @@ const contentSchema = z.object({
 export async function generateContent(jobAnalysis: JobAnalysis, resumeText: string): Promise<{ success: boolean; data?: z.infer<typeof contentSchema>; error?: string }> {
   try {
     const { object } = await generateObject({
-      model: google('gemini-2.0-flash-exp'),
+      model: google('gemini-3-flash-preview'),
       schema: contentSchema,
       prompt: `
         당신은 전문 커리어 컨설턴트입니다. 

@@ -38,8 +38,8 @@ export default function Home() {
     const file = e.target.files?.[0];
     if (!file) return;
 
-    if (file.type !== 'application/pdf') {
-      alert('PDF 파일만 업로드할 수 있습니다.');
+    if (!file.name.endsWith('.txt')) {
+      alert('텍스트(.txt) 파일만 업로드할 수 있습니다.');
       return;
     }
 
@@ -141,7 +141,7 @@ export default function Home() {
             <div className="mt-8 p-8 border-2 border-dashed rounded-xl bg-slate-50 hover:bg-slate-100 transition-colors relative">
               <input
                 type="file"
-                accept=".pdf"
+                accept=".txt"
                 onChange={handleFileUpload}
                 className="absolute inset-0 w-full h-full opacity-0 cursor-pointer"
               />
@@ -150,7 +150,7 @@ export default function Home() {
                   <Upload size={24} />
                 </div>
                 <div>
-                  <h3 className="font-bold text-lg">{resumeName ? '업로드 완료!' : 'PDF 이력서 업로드'}</h3>
+                  <h3 className="font-bold text-lg">{resumeName ? '업로드 완료!' : 'TXT 이력서(한글,워드등 다른 이름으로 저장하기로 변환)'}</h3>
                   <p className="text-sm text-slate-500 mt-1">
                     {resumeName || '클릭하거나 파일을 드래그하여 업로드하세요 (텍스트 추출용)'}
                   </p>
