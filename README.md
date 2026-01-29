@@ -1,36 +1,88 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# 🎯 AI Job Matcher & Builder
 
-## Getting Started
+채용 공고를 분석하고 사용자의 이력서와 매칭하여 최적화된 자기소개서를 생성해주는 인공지능 도구입니다. 초보자도 쉽게 따라 할 수 있도록 구성되었습니다.
 
-First, run the development server:
+---
+
+## 🚀 주요 기능
+
+1.  **채용 공고 분석**: URL만 입력하면 AI가 주요 업무, 필수 역량, 인재상, 핵심 키워드를 자동으로 추출합니다.
+2.  **이력서 매칭**: 업로드한 이력서 텍스트와 기업의 니즈를 분석하여 적합성을 판단합니다.
+3.  **맞춤 자소서 생성**: 분석된 데이터를 바탕으로 기업이 선호할 만한 문체와 성과 중심의 자기소개서를 마크다운 형식으로 작성해줍니다.
+
+---
+
+## 🛠 기술 스택
+
+- **Framework**: [Next.js 15 (App Router)](https://nextjs.org/)
+- **AI SDK**: [Vercel AI SDK](https://sdk.ai.dev/)
+- **Model**: Google Gemini 3 Flash Preview
+- **Styling**: Tailwind CSS, Framer Motion (Animations)
+- **Icons**: Lucide React
+
+---
+
+## 📋 사전 준비 사항
+
+시작하기 전에 다음이 설치되어 있어야 합니다:
+
+1.  **Node.js**: [공식 홈페이지](https://nodejs.org/)에서 LTS 버전을 설치하세요.
+2.  **Google AI API Key**: [Google AI Studio](https://aistudio.google.com/)에서 API 키를 발급받아야 합니다. (무료 티어 사용 가능)
+
+---
+
+## 💻 설치 및 실행 방법
+
+### 1. 프로젝트 다운로드 및 폴더 이동
+
+터미널(또는 명령 프롬프트)을 열고 아래 명령어를 실행하거나, 프로젝트 폴더로 이동합니다.
+
+### 2. 의존성 패키지 설치
+
+```bash
+npm install
+```
+
+### 3. 환경 변수 설정
+
+프로젝트 루트 폴더(가장 바깥쪽)에 `.env.local` 파일을 생성하고 아래 내용을 입력합니다.
+
+```env
+GOOGLE_GENERATIVE_AI_API_KEY=여러분의_API_키_입력
+```
+
+### 4. 로컬 서버 실행
 
 ```bash
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+이제 브라우저에서 [http://localhost:3000](http://localhost:3000) 접속하여 앱을 확인할 수 있습니다.
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+---
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+## 📖 사용 가이드 (Step-by-Step)
 
-## Learn More
+### Step 1: 채용 공고 분석
 
-To learn more about Next.js, take a look at the following resources:
+- 지원하려는 채용 공고의 URL을 입력합니다. (예: 사람인, 잡코리아, 원티드 등)
+- 회사 홈페이지 URL을 함께 입력하면 더 정확한 인재상 분석이 가능합니다.
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+### Step 2: 이력서 업로드
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+- **주의**: 현재 시스템은 **텍스트(.txt) 파일**만 지원합니다.
+- **Tip**: 한글(.hwp), 워드(.docx), PDF 이력서가 있다면 프로그램에서 '다른 이름으로 저장'하여 텍스트 파일로 변환해 준비해주세요.
+- 준비된 파일을 업로드 영역에 드래그하거나 선택하여 업로드합니다.
 
-## Deploy on Vercel
+### Step 3: 자소서 생성 및 복사
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+- "자소서 생성하기" 버튼을 누르면 AI가 작성을 시작합니다.
+- 완성된 자소서는 "전체 복사하기" 버튼을 눌러 바로 활용할 수 있습니다.
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+---
+
+## ⚠️ 주의 사항
+
+- AI가 생성한 내용은 반드시 사용자가 직접 검토하고 수정해야 합니다.
+- 이력서에 없는 내용을 AI가 임의로 지어내지 않도록 설계되었으나, 매칭 과정에서 오차가 있을 수 있습니다.
+- API 할당량 초과 메시지가 발생하면 잠시 후 다시 시도해 주세요.
