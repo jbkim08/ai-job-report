@@ -28,10 +28,10 @@ export default function RootLayout({
               <div className="bg-slate-900 text-white p-2 rounded-lg shadow-sm">
                 <FileText size={20} strokeWidth={2.5} />
               </div>
-              <h1 className="font-bold text-lg tracking-tight text-slate-900">AI Job Matcher</h1>
+              <h1 className="font-bold text-lg tracking-tight text-slate-900">AI 맞춤형 자소서</h1>
             </div>
             <nav className="text-sm font-medium text-slate-500 hover:text-slate-900 transition-colors">
-              <a href="#" className="hover:underline">사용 가이드</a>
+              <a href="#" className="hover:underline">사용 가이드(없음)</a>
             </nav>
           </div>
         </header>
@@ -40,7 +40,7 @@ export default function RootLayout({
         </main>
         <footer className="border-t border-slate-100 py-8 text-center text-sm text-slate-400">
           <p>© {new Date().getFullYear()} AI Job Matcher.</p>
-          <p className="mt-1">Powered by Google Gemini 2.0 Flash</p>
+          <p className="mt-1">Powered by Google Gemini 3.0 Flash</p>
         </footer>
       </body>
     </html>
